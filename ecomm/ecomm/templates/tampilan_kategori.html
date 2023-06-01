@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% include 'carousel.html' %}
+<main>
+<div class="container">
+        
+ <!--    </div>
+   {% if items %}
+  <h2>Kategori: {{ kategori }}</h2>
+  <ul>
+    {% for item in items %}
+      <li>{{ item.nama_produk }}</li>
+       <p>Harga: {{ item.harga }}</p>
+        <p>Deskripsi: {{ item.deskripsi }}</p>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Tidak ada produk yang ditemukan.</p>
+{% endif %} -->
+
+
+<!-- {% if items %}
+  <h2>Kategori: {{ kategori }}</h2>
+  <ul>
+    {% for item in items %}
+      <li>
+        <h3>{{ item.nama_produk }}</h3>
+        <p>Harga: {{ item.harga }}</p>
+        {% if item.harga_diskon %}
+          <p>Harga Diskon: {{ item.harga_diskon }}</p>
+        {% endif %}
+        <p>Deskripsi: {{ item.deskripsi }}</p>
+        <img src="{{ item.gambar.url }}" alt="{{ item.nama_produk }}">
+        <p>Label: {{ item.get_label_display }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Tidak ada produk yang ditemukan.</p>
+{% endif %} -->
+
+
+
+        <section>
+            <div class="text-center">
+                 {% if items %}
+            <h2>Kategori: {{ kategori_display }} <!-- {% for choice in items.model.kategori.field.choices %}
+      {% if choice.0 == kategori %}
+        {{ choice.1 }}
+      {% endif %}
+    {% endfor %} -->
+           
+          </h2>
+                
+              <div class="row mb-3">
+                {% for item in items %}
+                <div class="col-lg-3 col-md-6 mb-2">
+                  <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                      data-mdb-ripple-color="light">
+                      <img src="{{ item.gambar.url }}" class="w-100" alt="{{ item.nama_produk }}">
+                      <a href="{{ item.get_absolute_url }}"> 
+                        <div class="mask">
+                          <div class="d-flex justify-content-start align-items-end h-100">
+                            <h5><span class="badge bg-{{ item.get_label_display }} ms-2">{{ item.label }}</span></h5>
+                          </div>
+                        </div>
+                        <div class="hover-overlay">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <a href="{{ item.get_absolute_url }}" class="text-reset">
+                        <h5 class="card-title mb-2">{{ item.nama_produk }}</h5>
+                      </a>
+                      <a href="" class="text-reset ">
+                        <p>{{ item.get_kategori_display }}</p>
+                      </a>
+                      <h6 class="mb-3 price">${% if item.harga_diskon %}{{ item.harga_diskon }}{% else %}{{ item.harga }}{% endif %}</h6>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>Tidak ada produk dalam kategori {{ kategori_display }}</p>
+              </div>
+
+                {% endif %}
+            </div>
+          </section>
+
+
+
+</div>
+</main>
+{% endblock content %}
