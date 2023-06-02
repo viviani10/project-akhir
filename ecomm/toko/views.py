@@ -279,4 +279,7 @@ class ProductKategoriView(View):
         # print(items)
         return render(request, template_name, context)
 
+def contact(request):
+    return render(request, 'kontak.html')
+
    
