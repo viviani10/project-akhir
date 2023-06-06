@@ -16,5 +16,6 @@ urlpatterns = [
      # path('kategori/<str:kategori>/', views.tampilkan_berdasarkan_kategori, name='tampilkan_berdasarkan_kategori'),
      # path('kategori/<kategori>/', views.tampilkan_berdasarkan_kategori, name='tampilkan_berdasarkan_kategori'),
      path('kategori/<slug:kategori>/', views.ProductKategoriView.as_view(), name='product-kategori'),
-     path('kontak/', views.contact, name="kontak")
+     path('kontak/', views.contact, name='kontak'),
+     path('search/', views.search, name='search')
 ]

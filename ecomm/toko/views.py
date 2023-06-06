@@ -282,4 +282,14 @@ class ProductKategoriView(View):
 def contact(request):
     return render(request, 'kontak.html')
 
-   
+def search(request):
+    query = request.GET.get('nama_produk')
+    items = ProdukItem.objects.filter(nama_produk__icontains=query) if query else None
+
+    context = {
+        'query': query,
+        'items': items,
+    }
+
+    template_name = 'search.html'
+    return render(request, template_name, context)
