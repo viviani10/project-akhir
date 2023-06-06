@@ -35,7 +35,7 @@
                             <a class="nav-link text-white" href="#">Semua</a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'toko:product-kategori' 'K' %}">kaos / Kemeja</a>
+                            <a class="nav-link text-white" href="{% url 'toko:product-kategori' 'K' %}">Kaos / Kemeja</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'toko:product-kategori' 'J_S' %}">Jaket / Sweater</a>
@@ -85,7 +85,7 @@
               <div class="row">
                 
                 {% for pItem in object_list %}
-                <div class="col-lg-2 col-md-6 mb-4">
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
                   <div class="card">
                     <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                       data-mdb-ripple-color="light">
